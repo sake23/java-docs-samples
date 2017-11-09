@@ -31,7 +31,7 @@ function TestEndpoints () {
 # Jenkins provides values for GOOGLE_PROJECT_ID and GOOGLE_VERSION_ID
 # Update Greetings.java
 UNIQUE_MAVEN_STRING="maven"
-sed -i'.bak' -e "s/YOUR_PROJECT_ID/${GOOGLE_PROJECT_ID}/g" pom.xml
+sed -i'.bak' -e "s/YOUR_PROJECT_ID/${GOOGLE_PROJECT_ID}-dot-${GOOGLE_PROJECT_ID}/g" pom.xml
 
 mvn clean endpoints-framework:openApiDocs
 
@@ -51,7 +51,7 @@ mvn clean
 # Test with Gradle
 # Modify Greetings.java for Gradle
 UNIQUE_GRADLE_STRING="gradle"
-sed -i'.bak' -e "s/YOUR_PROJECT_ID/${GOOGLE_PROJECT_ID}/g" build.gradle
+sed -i'.bak' -e "s/YOUR_PROJECT_ID/${GOOGLE_PROJECT_ID}-dot-${GOOGLE_PROJECT_ID}/g" build.gradle
 
 gradle clean endpointsOpenApiDocs
 
